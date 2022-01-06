@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'DarkStella'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0F0E9FF34B1348AABFF01A3AB831DBA8 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C01FF91014C0491BB1A2A08914FBBD56 }}
           package: .
