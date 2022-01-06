@@ -12,7 +12,6 @@ client.once('ready', () => {
 });
 
 client.on("message", (message) => {
-    console.log("Message has been created")
     if (message.content === "ds#ping")
     {
         message.reply("pong")
