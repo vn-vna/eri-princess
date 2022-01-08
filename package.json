@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Dark Stella discord bot",
   "main": "srcs/index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "node ."
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vn-white-cat/dark-stella.git"

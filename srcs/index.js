@@ -1,21 +1,24 @@
-const { Client, Intents } = require('discord.js');
+const { Client, Intents } = require('discord.js')
 const DotEnv = require("dotenv")
+const commandEval = require("./msg-command/command-eval");
+const messageWatcher = require("./msg-watcher/message-watcher")
 
 DotEnv.config()
 
-const token = process.env.BOT_TOKEN;
+const token = process.env.BOT_TOKEN
 
-const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] })
 
 client.once('ready', () => {
-    console.log('Ready!');
-});
+    console.log('Ready!')
+})
 
-client.on("message", (message) => {
-    if (message.content === "ds#ping")
-    {
-        message.reply("pong")
+client.on("messageCreate", (message) => {
+    if (message.content.startsWith("eri")) {
+        commandEval(message.content.split(" "), message)
+    } else {
+        messageWatcher(message)
     }
 })
 
-client.login(token);
+client.login(token)
