@@ -24,7 +24,7 @@ class EriMongo {
             const Database = client.db(EriDbConst.ERI_DB_NAME);
             await execution(Database)
         } finally {
-            await client.close();
+            await client?.close();
         }
     }
 }
