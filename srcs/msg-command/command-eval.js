@@ -1,5 +1,5 @@
 const { Message, Client } = require('discord.js')
-const commandList = require("./command-list")
+const commandList = require('./command-list')
 
 /**
  *

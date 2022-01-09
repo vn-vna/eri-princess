@@ -24,5 +24,5 @@ module.exports = {
                 message.reply(REPLY[1])
             })
     },
-    description: "Touch me?"
+    description: 'Touch me?',
 }
