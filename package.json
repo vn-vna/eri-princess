@@ -1,27 +1,33 @@
 {
-  "name": "dark-stella",
-  "version": "1.0.0",
-  "description": "Dark Stella discord bot",
-  "main": "srcs/index.js",
-  "scripts": {
-    "start": "node ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vn-white-cat/dark-stella.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/vn-white-cat/dark-stella/issues"
-  },
-  "homepage": "https://github.com/vn-white-cat/dark-stella#readme",
-  "dependencies": {
-    "@discordjs/builders": "^0.11.0",
-    "@discordjs/rest": "^0.2.0-canary.0",
-    "discord-api-types": "^0.26.1",
-    "discord.js": "^13.5.0",
-    "dotenv": "^10.0.0"
-  }
+    "name": "dark-stella",
+    "version": "1.0.0",
+    "description": "Dark Stella discord bot",
+    "main": "srcs/index.js",
+    "scripts": {
+        "start": "node .",
+        "prettier": "prettier --write ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vn-white-cat/dark-stella.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/vn-white-cat/dark-stella/issues"
+    },
+    "homepage": "https://github.com/vn-white-cat/dark-stella#readme",
+    "dependencies": {
+        "@discordjs/builders": "^0.11.0",
+        "@discordjs/rest": "^0.2.0-canary.0",
+        "discord-api-types": "^0.26.1",
+        "discord.js": "^13.5.0",
+        "dotenv": "^10.0.0",
+        "express": "^4.17.2",
+        "jsonwebtoken": "^8.5.1"
+    },
+    "devDependencies": {
+        "prettier": "^2.5.1"
+    }
 }
