@@ -6,7 +6,8 @@ console.log(process.env.MONGO_CERT_FILE)
 
 const EriDbConst = {
     ERI_DB_NAME: "eri",
-    ERI_COLL_SCHEDULE_NAME: "eri_schedule"
+    ERI_COLL_SCHEDULE_NAME: "eri_schedule",
+    ERI_COLL_SERVERS: "eri_server"
 }
 
 class EriMongo {

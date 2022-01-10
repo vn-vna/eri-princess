@@ -1,13 +1,13 @@
 const { Message } = require('discord.js')
 
 const REPLY_ARR = [
-    ['😨', "Don't touch me human!"],
-    ['🙄', 'Hey?'],
-    ['🙄', 'なに???'],
-    ['😒', 'Go to the hell!!!'],
-    ['😒', '死ぬ 😒'],
     ['😫', 'Eh?'],
+    ['🙄', 'Hey?'],
     ['🤔', '...?'],
+    ['🙄', 'なに???'],
+    ['😒', '死ぬ 😒'],
+    ['😒', 'Go to the hell!!!'],
+    ['😨', "Don't touch me human!"],
 ]
 
 module.exports = {

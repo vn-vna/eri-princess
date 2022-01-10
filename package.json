@@ -4,7 +4,7 @@
     "description": "Dark Stella discord bot",
     "main": "srcs/index.js",
     "scripts": {
-        "start": "node .",
+        "start": "ts-node ./ts-src/index",
         "prettier": "prettier --write ."
     },
     "repository": {
@@ -29,6 +29,8 @@
         "mongodb": "^4.3.0"
     },
     "devDependencies": {
-        "prettier": "^2.5.1"
+        "prettier": "^2.5.1",
+        "ts-node": "^10.4.0",
+        "typescript": "^4.5.4"
     }
 }
