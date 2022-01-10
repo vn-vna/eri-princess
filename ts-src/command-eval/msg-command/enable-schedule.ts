@@ -1,3 +1,4 @@
+import { TextChannel } from "discord.js";
 import ScheduleMessage from "../../utils/schedule-message";
 import { EriMsgCommand } from "../command-template";
 
@@ -10,7 +11,7 @@ export default class EnableScheduleMsgCommand extends EriMsgCommand {
             if (message.guild && message.channel)
                 ScheduleMessage.getInstance()?.putSchedule(message.guild?.id, message.channel?.id)
             
-            message.reply("Tính năng tin nhắn chu kỳ đã được bật 👌")
+            message.reply(`Tính năng tin nhắn chu kỳ đã được bật trên kênh ${message.channel.toString()} 👌`)
         }
     }
 }

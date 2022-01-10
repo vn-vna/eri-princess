@@ -42,9 +42,10 @@ export default class ScheduleMessage {
 
                 const delta = nextTime.getTime() - crrTime.getTime()
 
-                console.log(`Scheduled server ${serverId} in channel ${channelId} message in ${delta} ms`)
+                const server = EriBot.getInstance().djsClient.guilds.cache.get(serverId)
+                const channel = (server?.channels.cache.get(channelId) as (TextChannel | undefined | null))
+                console.log(`Scheduled server ${server?.toString()} in channel ${channel?.toString()} message in ${delta} ms`)
                 this._goodNightMpx.set(serverId, setTimeout(() => {
-                    const channel = (EriBot.getInstance().djsClient.channels.cache.get(channelId) as (TextChannel | undefined | null))
                     channel?.send("Eri chúc tất cả mọi người ngủ ngon, có những giấc mơ thật tuyệt vời nha ❤️")
                 }, delta))
             }
