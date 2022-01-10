@@ -5,13 +5,15 @@ type MongoQueryFunction = (db: Db) => any
 export interface DiscordServerSettingsT {
     server_id?: string,
     missingu?: string,
-    schedule_gt?: string
+    schedule_gt?: string,
+    gmt?: number
 }
 
 export const defaultServerSettings: DiscordServerSettingsT = {
     server_id: undefined,
     missingu: undefined,
     schedule_gt: undefined,
+    gmt: 7
 }
 
 export default class EriMongoDB {

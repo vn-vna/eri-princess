@@ -13,7 +13,8 @@ export default class CommandEval {
             new MessageCommand.PingMsgCommand(),
             new MessageCommand.TouchMsgCommand(),
             new MessageCommand.RegisterMsgCommand(),
-            new MessageCommand.DeRegisterMsgCommand()
+            new MessageCommand.DeRegisterMsgCommand(),
+            new MessageCommand.EnableScheduleMsgCommand()
         ]
     }
 

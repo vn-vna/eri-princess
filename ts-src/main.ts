@@ -1,6 +1,7 @@
 import CommandEval from './command-eval/command-eval'
 import { Client, Intents } from 'discord.js'
 import { config as DotEnvCfg } from 'dotenv'
+import ScheduleMessage from './utils/schedule-message'
 
 export class EriBot {
     public _djsClient: Client
@@ -20,8 +21,11 @@ export class EriBot {
                 Intents.FLAGS.GUILDS
             ]
         })
+        this._djsClient.user?.setStatus("online")
+        this._djsClient.user?.setActivity("with VNA")
         this._djsClient.once("ready", (client) => {
             console.log(`Application logged in as ${client.user.tag}`)
+            ScheduleMessage.getInstance()?.loadSchedule()
         })
         this._djsClient.on("messageCreate", (message) => {
             const commandArr = message.content.split(" ")
@@ -31,7 +35,6 @@ export class EriBot {
 
             }
         })
-
     }
 
     public run() {

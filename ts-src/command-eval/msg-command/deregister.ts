@@ -12,7 +12,7 @@ export default class UnRegisterMsgCommand extends EriMsgCommand {
             EriMongoDB.query(async (database) => {
                 try {
                     const finder = await database
-                        .collection(EriMongoDB.EriDbConst.ERI_COLL_SERVERS)
+                        .collection<DiscordServerSettingsT>(EriMongoDB.EriDbConst.ERI_COLL_SERVERS)
                         .findOne({ server_id: { $eq: message.guild?.id } })
 
                     if (!finder) {
@@ -27,7 +27,7 @@ export default class UnRegisterMsgCommand extends EriMsgCommand {
                         message.react('❌')
                     } else {
                         const del = await database
-                            .collection(EriMongoDB.EriDbConst.ERI_COLL_SERVERS)
+                            .collection<DiscordServerSettingsT>(EriMongoDB.EriDbConst.ERI_COLL_SERVERS)
                             .findOneAndDelete({ server_id: { $eq: message.guild?.id } })
                         if (del.ok) {
                             const eMsg = new MessageEmbed()

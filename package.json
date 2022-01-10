@@ -1,8 +1,8 @@
 {
-    "name": "dark-stella",
+    "name": "eri-princess",
     "version": "1.0.0",
     "description": "Dark Stella discord bot",
-    "main": "srcs/index.js",
+    "main": "./ts-src/execute.js",
     "scripts": {
         "start": "ts-node ./ts-src/index",
         "prettier": "prettier --write ."

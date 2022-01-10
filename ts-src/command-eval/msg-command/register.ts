@@ -12,11 +12,11 @@ export default class RegisterMsgCommand extends EriMsgCommand {
             EriMongoDB.query(async (database) => {
                 try {
                     const finder = await database
-                        .collection(EriMongoDB.EriDbConst.ERI_COLL_SERVERS)
+                        .collection<DiscordServerSettingsT>(EriMongoDB.EriDbConst.ERI_COLL_SERVERS)
                         .findOne({ server_id: { $eq: message?.guild?.id } })
 
                     if (!finder) {
-                        const insVal = await database.collection(EriMongoDB.EriDbConst.ERI_COLL_SERVERS)
+                        const insVal = await database.collection<DiscordServerSettingsT>(EriMongoDB.EriDbConst.ERI_COLL_SERVERS)
                             .insertOne({ ...defaultServerSettings, server_id: message.guild?.id })
                         const serverRegistered = await database.collection(EriMongoDB.EriDbConst.ERI_COLL_SERVERS)
                             .countDocuments()
@@ -27,7 +27,7 @@ export default class RegisterMsgCommand extends EriMsgCommand {
                                     name: "Eri",
                                     iconURL: process.env.ERI_AVATAR_URL
                                 })
-                                .addField(`Server ${message?.guild?.name} đã tham gia cũng Eri và ${serverRegistered - 1} server khác!!`,`Mọi người ơi, giờ chúng ta đã là bạn rồi ❤️`)
+                                .addField(`Server ${message?.guild?.name} đã tham gia cũng Eri và ${serverRegistered - 1} server khác!!`, `Mọi người ơi, giờ chúng ta đã là bạn rồi ❤️`)
                             message.reply({ embeds: [eMsg] })
                         }
                         message.react('👌')
@@ -38,7 +38,7 @@ export default class RegisterMsgCommand extends EriMsgCommand {
                                 name: "Eri",
                                 iconURL: process.env.ERI_AVATAR_URL
                             })
-                            .addField(`Server ${message.guild?.name} đã đăng kí trước đó.`,`Bạn không cần thực hiện lại bước này~~`)
+                            .addField(`Server ${message.guild?.name} đã đăng kí trước đó.`, `Bạn không cần thực hiện lại bước này~~`)
                         message.reply({ embeds: [eMsg] })
                         message.react('❌')
                     }
