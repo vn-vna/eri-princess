@@ -44,13 +44,30 @@ export default class ScheduleMessage {
 
                 const server = EriBot.getInstance().djsClient.guilds.cache.get(serverId)
                 const channel = (server?.channels.cache.get(channelId) as (TextChannel | undefined | null))
-                console.log(`Scheduled server ${server?.toString()} in channel ${channel?.toString()} message in ${delta} ms`)
+                console.log(`Scheduled on server ${server?.toString()} in channel ${channel?.toString()} message in ${delta} ms`)
                 this._goodNightMpx.set(serverId, setTimeout(() => {
                     channel?.send("Eri chúc tất cả mọi người ngủ ngon, có những giấc mơ thật tuyệt vời nha ❤️")
                 }, delta))
             }
         })
+    }
 
+    public removeSchedule(serverId: string) {
+        let crrInterval = this._goodNightMpx.get(serverId)
+        if (crrInterval) {
+            clearInterval(crrInterval)
+            this._goodNightMpx.delete(serverId)
+
+            EriMongoDB.query(async (db) => {
+                const modify = await db.collection<DiscordServerSettingsT>(EriMongoDB.EriDbConst.ERI_COLL_SERVERS)
+                    .findOneAndUpdate({ server_id: { $eq: serverId } }, { $set: { schedule_gt: null } })
+
+                if (modify.ok) {
+                    const server = EriBot.getInstance().djsClient.guilds.cache.get(serverId)
+                    console.log(`Schedule on ${server?.toString()} has been canceled`)
+                }
+            })
+        }
     }
 
     public loadSchedule() {

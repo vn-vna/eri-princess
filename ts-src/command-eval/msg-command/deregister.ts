@@ -17,7 +17,7 @@ export default class UnRegisterMsgCommand extends EriMsgCommand {
 
                     if (!finder) {
                         const eMsg = new MessageEmbed()
-                            .setColor("#770000")
+                            .setColor("#dd0000")
                             .setAuthor({
                                 name: "Eri",
                                 iconURL: process.env.ERI_AVATAR_URL
@@ -31,7 +31,7 @@ export default class UnRegisterMsgCommand extends EriMsgCommand {
                             .findOneAndDelete({ server_id: { $eq: message.guild?.id } })
                         if (del.ok) {
                             const eMsg = new MessageEmbed()
-                                .setColor("#770000")
+                                .setColor("#dd0000")
                                 .setAuthor({
                                     name: "Eri",
                                     iconURL: process.env.ERI_AVATAR_URL

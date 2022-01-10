@@ -3,10 +3,10 @@ import { Db, MongoClient } from "mongodb";
 type MongoQueryFunction = (db: Db) => any
 
 export interface DiscordServerSettingsT {
-    server_id?: string,
-    missingu?: string,
-    schedule_gt?: string,
-    gmt?: number
+    server_id?: string | null,
+    missingu?: string | null,
+    schedule_gt?: string | null,
+    gmt?: number | null
 }
 
 export const defaultServerSettings: DiscordServerSettingsT = {

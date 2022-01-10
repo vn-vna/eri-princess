@@ -14,7 +14,8 @@ export default class CommandEval {
             new MessageCommand.TouchMsgCommand(),
             new MessageCommand.RegisterMsgCommand(),
             new MessageCommand.DeRegisterMsgCommand(),
-            new MessageCommand.EnableScheduleMsgCommand()
+            new MessageCommand.EnableScheduleMsgCommand(),
+            new MessageCommand.DisableScheduleMsgCommand()
         ]
     }
 

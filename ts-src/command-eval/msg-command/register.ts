@@ -22,7 +22,7 @@ export default class RegisterMsgCommand extends EriMsgCommand {
                             .countDocuments()
                         if (insVal) {
                             const eMsg = new MessageEmbed()
-                                .setColor("#770000")
+                                .setColor("#dd0000")
                                 .setAuthor({
                                     name: "Eri",
                                     iconURL: process.env.ERI_AVATAR_URL
@@ -33,7 +33,7 @@ export default class RegisterMsgCommand extends EriMsgCommand {
                         message.react('👌')
                     } else {
                         const eMsg = new MessageEmbed()
-                            .setColor("#770000")
+                            .setColor("#dd0000")
                             .setAuthor({
                                 name: "Eri",
                                 iconURL: process.env.ERI_AVATAR_URL
