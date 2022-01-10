@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\ts-src",
+    "\\ts-src\\command-eval",
+    "\\ts-src\\command-eval\\msg-command",
+    "\\ts-src\\msg-watcher",
+    "\\ts-src\\msg-watcher\\watcher"
+  ],
+  "SelectedNode": "\\ts-src\\main.ts",
+  "PreviewInSolutionExplorer": false
+}

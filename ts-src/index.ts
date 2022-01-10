@@ -1,3 +1,3 @@
-import { EriBot } from './main'
+import { EriBot } from "./main"
 
 EriBot.getInstance().run()

@@ -1,5 +1,3 @@
-
-
 module.exports = class {
-    static uval = 0;
+  static uval = 0
 }

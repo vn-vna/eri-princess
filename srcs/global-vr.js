@@ -1,3 +1,3 @@
 module.exports = {
-    upTime: 0,
+  upTime: 0,
 }

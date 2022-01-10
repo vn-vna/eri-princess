@@ -1,41 +1,41 @@
-import { Message } from "discord.js";
-import { EriMsgCommand } from "./command-template";
+import { Message } from "discord.js"
+import { EriMsgCommand } from "./command-template"
 import * as MessageCommand from "./msg-command/commands"
 
-export default class CommandEval {
-    protected _msgcmd: EriMsgCommand[]
+export default class EriCommandEvaler {
+  protected _msgcmd: EriMsgCommand[]
 
-    private static instance?: CommandEval;
+  private static instance?: EriCommandEvaler
 
-    constructor() {
-        this._msgcmd = [
-            new MessageCommand.HelpMsgCommand(),
-            new MessageCommand.PingMsgCommand(),
-            new MessageCommand.TouchMsgCommand(),
-            new MessageCommand.RegisterMsgCommand(),
-            new MessageCommand.DeRegisterMsgCommand(),
-            new MessageCommand.EnableScheduleMsgCommand(),
-            new MessageCommand.DisableScheduleMsgCommand()
-        ]
+  constructor() {
+    this._msgcmd = [
+      new MessageCommand.HelpMsgCommand(),
+      new MessageCommand.PingMsgCommand(),
+      new MessageCommand.TouchMsgCommand(),
+      new MessageCommand.RegisterMsgCommand(),
+      new MessageCommand.DeRegisterMsgCommand(),
+      new MessageCommand.EnableScheduleMsgCommand(),
+      new MessageCommand.DisableScheduleMsgCommand(),
+    ]
+  }
+
+  public eval(cmdarr: string[], message: Message) {
+    for (let cmd of this._msgcmd) {
+      if (cmdarr[1] === cmd.cmdName) {
+        cmd.execute(message)
+        return
+      }
     }
+  }
 
-    public eval(cmdarr: string[], message: Message) {
-        for (let cmd of this._msgcmd) {
-            if (cmdarr[1] === cmd.cmdName) {
-                cmd.execute(message)
-                return
-            }
-        }
-    }
+  public get msgCmdList() {
+    return this._msgcmd
+  }
 
-    public get msgCmdList() {
-        return this._msgcmd
+  public static getInstance() {
+    if (!EriCommandEvaler.instance) {
+      EriCommandEvaler.instance = new EriCommandEvaler()
     }
-
-    public static getInstance() {
-        if (!CommandEval.instance) {
-            CommandEval.instance = new CommandEval()
-        }
-        return CommandEval.instance
-    }
+    return EriCommandEvaler.instance
+  }
 }

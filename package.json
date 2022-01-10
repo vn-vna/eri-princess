@@ -1,36 +1,36 @@
 {
-    "name": "eri-princess",
-    "version": "1.0.0",
-    "description": "Dark Stella discord bot",
-    "main": "./ts-src/execute.js",
-    "scripts": {
-        "start": "ts-node ./ts-src/index",
-        "prettier": "prettier --write ."
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/vn-white-cat/dark-stella.git"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/vn-white-cat/dark-stella/issues"
-    },
-    "homepage": "https://github.com/vn-white-cat/dark-stella#readme",
-    "dependencies": {
-        "@discordjs/builders": "^0.11.0",
-        "@discordjs/rest": "^0.2.0-canary.0",
-        "discord-api-types": "^0.26.1",
-        "discord.js": "^13.5.0",
-        "dotenv": "^10.0.0",
-        "express": "^4.17.2",
-        "jsonwebtoken": "^8.5.1",
-        "mongodb": "^4.3.0",
-        "ts-node": "^10.4.0",
-        "typescript": "^4.5.4"
-    },
-    "devDependencies": {
-        "prettier": "^2.5.1"
-    }
+  "name": "eri-princess",
+  "version": "1.0.0",
+  "description": "Dark Stella discord bot",
+  "main": "./ts-src/execute.js",
+  "scripts": {
+    "start": "ts-node ./ts-src/index",
+    "prettier": "prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vn-white-cat/dark-stella.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vn-white-cat/eri-princess/issues"
+  },
+  "homepage": "https://github.com/vn-white-cat/eri-princess#readme",
+  "dependencies": {
+    "@discordjs/builders": "^0.11.0",
+    "@discordjs/rest": "^0.2.0-canary.0",
+    "discord-api-types": "^0.26.1",
+    "discord.js": "^13.5.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.3.0",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  },
+  "devDependencies": {
+    "prettier": "^2.5.1"
+  }
 }

@@ -1,8 +1,7 @@
-const C2 = require('./class2')
+const C2 = require("./class2")
 
-C2.uval = 15;
+C2.uval = 15
 
 module.exports = class {
-    static {
-    }
+  static {}
 }

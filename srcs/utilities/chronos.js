@@ -1,5 +1,5 @@
 class Chrono {
-    static uptime
+  static uptime
 }
 
 module.exports = Chrono

@@ -1,4 +1,4 @@
-const FileSystem = require('fs')
+const FileSystem = require("fs")
 
 const COMMANDS_FILES = FileSystem.readdirSync(`${__dirname}/command`)
 console.log(COMMANDS_FILES)
@@ -8,7 +8,7 @@ console.log(COMMANDS_FILES)
 let commandProps = []
 
 for (let file of COMMANDS_FILES) {
-    commandProps.push(require(`./command/${file}`))
+  commandProps.push(require(`./command/${file}`))
 }
 
 module.exports = commandProps

@@ -1,5 +1,5 @@
-const { Message, Client } = require('discord.js')
-const FileSystem = require('fs')
+const { Message, Client } = require("discord.js")
+const FileSystem = require("fs")
 
 const WATCHER_FILES = FileSystem.readdirSync(`${__dirname}/watcher/`)
 
@@ -9,7 +9,7 @@ const WATCHER_FILES = FileSystem.readdirSync(`${__dirname}/watcher/`)
 let watchers = []
 
 for (let file of WATCHER_FILES) {
-    watchers.push(require(`./watcher/${file}`))
+  watchers.push(require(`./watcher/${file}`))
 }
 
 /**
@@ -18,9 +18,9 @@ for (let file of WATCHER_FILES) {
  * @param {Client} client
  */
 module.exports = (message, client) => {
-    for (let watcher of watchers) {
-        if (watcher.match(message, client)) {
-            watcher.execution(message, client)
-        }
+  for (let watcher of watchers) {
+    if (watcher.match(message, client)) {
+      watcher.execution(message, client)
     }
+  }
 }

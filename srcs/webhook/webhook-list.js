@@ -1,6 +1,6 @@
-const { Request } = require('express')
-const { Client } = require('discord.js')
-const FileSystem = require('fs')
+const { Request } = require("express")
+const { Client } = require("discord.js")
+const FileSystem = require("fs")
 
 const WEBHOOK_FILES = FileSystem.readdirSync(`${__dirname}/webhook`)
 
@@ -9,7 +9,7 @@ const WEBHOOK_FILES = FileSystem.readdirSync(`${__dirname}/webhook`)
  */
 let webhookList = []
 for (let file of WEBHOOK_FILES) {
-    webhookList.push(require(`./webhook/${file}`))
+  webhookList.push(require(`./webhook/${file}`))
 }
 
 module.exports = webhookList
